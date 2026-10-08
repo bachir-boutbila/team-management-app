@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:team_management_app/UI/pages/home_page.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
 import 'package:team_management_app/UI/pages/navigation_page.dart';
 import 'package:team_management_app/models/design_properties.dart';
+import 'package:team_management_app/models/player_data.dart';
 
 // text adjustement
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(PlayerDataAdapter());
+  mybox = await Hive.openBox<PlayerData>('players');
+
   runApp(const MyApp());
 }
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:team_management_app/models/design_properties.dart';
 
 class HomePage extends StatelessWidget {
-  const new({super.key});
+  const HomePage({super.key});
 
   final image = 'assets/images/Glossy Blue Eagle Crown Emblem.png';
 

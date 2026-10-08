@@ -3,7 +3,7 @@ import 'package:team_management_app/UI/pages/home_page.dart';
 import 'package:team_management_app/models/design_properties.dart';
 
 class NavigationPage extends StatefulWidget {
-  const new({super.key});
+  const NavigationPage({super.key});
 
   @override
   State<NavigationPage> createState() => _NavigationPageState();
