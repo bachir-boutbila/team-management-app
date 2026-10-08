@@ -13,7 +13,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   Hive.registerAdapter(PlayerDataAdapter());
-  mybox = await Hive.openBox<PlayerData>('players');
+  await Hive.openBox<PlayerData>('players');
 
   runApp(const MyApp());
 }

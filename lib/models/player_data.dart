@@ -31,5 +31,3 @@ class PlayerData extends HiveObject {
     this.playerNumber,
   );
 }
-
-final Box<PlayerData> mybox = Hive.box<PlayerData>('players');

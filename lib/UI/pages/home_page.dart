@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:team_management_app/UI/widgets/player_info_card.dart';
 import 'package:team_management_app/models/design_properties.dart';
+import 'package:team_management_app/models/player_data.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
   final image = 'assets/images/Glossy Blue Eagle Crown Emblem.png';
+
+  final _mybox = Hive.box<PlayerData>('players');
 
   @override
   Widget build(BuildContext context) {
@@ -55,40 +60,27 @@ class HomePage extends StatelessWidget {
                   mainAxisSpacing: ePadding,
                 ),
                 itemCount: 4,
-                itemBuilder: (context, index) => Container(
-                  height: 140,
-                  width: 140,
-                  padding: EdgeInsets.all(ePadding),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(40),
-                    color: Colors.white,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'بوطبيله',
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
-                      SizedBox(height: objectPadding),
-                      Text(
-                        'عبد المهيمن',
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
-                      SizedBox(height: objectPadding),
-                      Text(
-                        '10',
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
-                    ],
-                  ),
+                itemBuilder: (context, index) => PlayerInfoCard(
+                  familyName: 'بوطبيله',
+                  name: 'عبد المهيمن',
+                  number: '10',
                 ),
+                // {
+                //   final player = _mybox.getAt(index);
+
+                //   return PlayerInfoCard(
+                //     familyName: player!.familyName,
+                //     name: player.name,
+                //     number: player.playerNumber,
+                //   );
+                // },
               ),
             ),
+
             SizedBox(height: objectPadding),
-            // FloatingActionButton(onPressed: null, child: Icon(Icons.add)),
           ],
         ),
+        // FloatingActionButton(onPressed: null, child: Icon(Icons.add)),
       ),
     );
   }
