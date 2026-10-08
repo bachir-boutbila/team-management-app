@@ -1,0 +1,5 @@
+for development : flutter 
+ packages : 
+ hive : for memory 
+ intel : time management 
+ flutter_localizations : for app localizations 
