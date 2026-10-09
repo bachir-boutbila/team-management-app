@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:team_management_app/UI/widgets/custom_app_bar.dart';
 import 'package:team_management_app/UI/widgets/player_info_card.dart';
 import 'package:team_management_app/models/design_properties.dart';
 import 'package:team_management_app/models/player_data.dart';
@@ -14,27 +15,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: barsColor,
-        title: Padding(
-          padding: EdgeInsets.symmetric(vertical: ePadding),
-          child: Center(
-            child: Text(
-              'اسم مستخدم',
-              style: Theme.of(context).textTheme.headlineLarge,
-            ),
-          ),
-        ),
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(left: ePadding),
-            child: CircleAvatar(
-              backgroundColor: iconColor,
-              child: Icon(Icons.sports_football),
-            ),
-          ),
-        ],
-      ),
+      appBar: CustomAppBar(),
       body: Padding(
         padding: EdgeInsets.all(mainPadding),
         child: Column(

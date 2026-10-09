@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:team_management_app/UI/pages/add_new_palyer.dart';
 
 import 'package:team_management_app/UI/pages/navigation_page.dart';
+import 'package:team_management_app/UI/widgets/custom_app_bar.dart';
 import 'package:team_management_app/models/design_properties.dart';
 import 'package:team_management_app/models/player_data.dart';
 
@@ -62,7 +64,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
 
-      home: NavigationPage(),
+      home: AddNewPalyer(),
     );
   }
 }
